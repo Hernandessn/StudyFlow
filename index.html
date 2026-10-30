@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7fc" />
+    <link rel="stylesheet" href="style.css">
+    <title>StudyFlow — Organizador de Estudos</title>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">✦</div>
+          <div>
+            <h1>StudyFlow</h1>
+            <p class="subtitle">Organize seus estudos, um passo de cada vez.</p>
+          </div>
+        </div>
+        <div class="today" id="todayLabel" aria-label="Data de hoje"></div>
+      </header>
+
+      <section class="stats" aria-label="Resumo das tarefas">
+        <article class="stat-card">
+          <div class="stat-icon" aria-hidden="true">▤</div>
+          <div>
+            <span class="stat-label">Total de tarefas</span
+            ><strong class="stat-value" id="totalCount">0</strong>
+          </div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-icon" aria-hidden="true">◷</div>
+          <div>
+            <span class="stat-label">Pendentes</span
+            ><strong class="stat-value" id="pendingCount">0</strong>
+          </div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-icon" aria-hidden="true">✓</div>
+          <div>
+            <span class="stat-label">Concluídas</span
+            ><strong class="stat-value" id="completedCount">0</strong>
+          </div>
+        </article>
+      </section>
+
+      <div class="layout">
+        <section class="panel" aria-labelledby="formTitle">
+          <h2 class="panel-heading" id="formTitle">Nova tarefa</h2>
+          <form id="taskForm">
+            <div class="form-group">
+              <label for="taskName">Nome da tarefa</label>
+              <input
+                id="taskName"
+                name="taskName"
+                type="text"
+                maxlength="120"
+                placeholder="Ex.: Revisar capítulo 3"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="subject">Matéria ou disciplina</label>
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                maxlength="80"
+                placeholder="Ex.: Biologia"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="dueDate">Data de entrega</label>
+              <input id="dueDate" name="dueDate" type="date" required />
+            </div>
+            <button class="primary-button" type="submit">
+              <span aria-hidden="true">＋</span> Adicionar tarefa
+            </button>
+          </form>
+        </section>
+
+        <section class="panel tasks-panel" aria-labelledby="tasksTitle">
+          <div class="tasks-heading">
+            <h2 class="panel-heading" id="tasksTitle">Suas tarefas</h2>
+            <span class="task-count" id="listCount">0 tarefas</span>
+          </div>
+          <div class="task-list" id="taskList" aria-live="polite"></div>
+        </section>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
